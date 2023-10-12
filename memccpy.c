@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   bzero.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/12 11:37:48 by marvin            #+#    #+#             */
-/*   Updated: 2023/10/12 11:37:48 by marvin           ###   ########.fr       */
+/*   Created: 2023/10/12 11:38:10 by marvin            #+#    #+#             */
+/*   Updated: 2023/10/12 11:38:10 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
+{
+	unsigned char	*src_cpy;
+	unsigned char	*dest_cpy;
 
-void	*ft_memset(void *s, int c, size_t n);
-void	ft_bzero(void *s, size_t n);
-void	*ft_memcpy(void *dest, const void *src, size_t n);
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
-
-#endif
+	src_cpy = (unsigned char *)src;
+	dest_cpy = (unsigned char *)dest;
+	while (n > 0)
+	{
+		*dest_cpy = *src_cpy;
+		dest_cpy++;
+		if (*src_cpy == (unsigned char)c)
+			return (dest_cpy);
+		src_cpy++;
+		n--;
+	}
+	return (NULL);
+}
