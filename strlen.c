@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memset.c                                           :+:      :+:    :+:   */
+/*   strlen.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/12 11:23:56 by marvin            #+#    #+#             */
-/*   Updated: 2023/10/12 11:23:56 by marvin           ###   ########.fr       */
+/*   Created: 2023/10/13 16:36:22 by marvin            #+#    #+#             */
+/*   Updated: 2023/10/13 16:36:22 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+size_t	ft_strlen(const char *s)
 {
-	unsigned char	*ptr;
+	unsigned char	*s_cpy;
+	size_t			compteur;
 
-	ptr = (unsigned char *)s;
-	while (n > 0)
+	s_cpy = s;
+	compteur = 0;
+	while (*s_cpy)
 	{
-		*ptr = (unsigned char)c;
-		ptr++;
-		n--;
+		compteur++;
+		s_cpy++;
 	}
-	return (s);
+	return (compteur);
 }

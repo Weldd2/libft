@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memset.c                                           :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/12 11:23:56 by marvin            #+#    #+#             */
-/*   Updated: 2023/10/12 11:23:56 by marvin           ###   ########.fr       */
+/*   Created: 2023/10/12 14:55:11 by marvin            #+#    #+#             */
+/*   Updated: 2023/10/12 14:55:11 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	print_memory(const void *addr, size_t size)
 {
-	unsigned char	*ptr;
+	size_t			i;
+	unsigned char	*p;
 
-	ptr = (unsigned char *)s;
-	while (n > 0)
+	i = 0;
+	p = (unsigned char *)addr;
+	while (i < size)
 	{
-		*ptr = (unsigned char)c;
-		ptr++;
-		n--;
+		printf("%02x ", p[i]);
+		i++;
 	}
-	return (s);
+	printf("\n");
+}
+
+int	main(void)
+{
+	return (0);
 }
