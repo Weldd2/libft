@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *s)
 {
-	unsigned char	*s_cpy;
+	const char		*s_cpy;
 	size_t			compteur;
 
 	s_cpy = s;

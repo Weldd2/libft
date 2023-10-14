@@ -14,8 +14,8 @@
 
 char	*ft_strcpy(char *dest, const char *src)
 {
-	char	*dest_cpy;
-	char	*src_cpy;
+	char		*dest_cpy;
+	const char	*src_cpy;
 
 	dest_cpy = dest;
 	src_cpy = src;
