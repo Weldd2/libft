@@ -17,7 +17,7 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	char	*r;
 	char	*r_cpy;
 
-	*r = (char *)malloc(ft_strlen(s));
+	r = (char *)malloc(ft_strlen(s));
 	if (!r)
 		return (NULL);
 	r_cpy = r;

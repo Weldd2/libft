@@ -1,12 +1,7 @@
 NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-SRCS = memset.c bzero.c memcpy.c memccpy.c memmove.c \
-       memchr.c memcmp.c strlen.c strdup.c strcpy.c \
-       strncpy.c strcat.c strncat.c strlcat.c strchr.c \
-       strrchr.c strstr.c strnstr.c strcmp.c strncmp.c \
-       atoi.c isalpha.c isdigit.c isalnum.c isascii.c \
-       isprint.c toupper.c tolower.c
+SRCS = atoi.c bzero.c calloc.c isalnum.c isalpha.c isascii.c isdigit.c isprint.c main.c memalloc.c memccpy.c memchr.c memcmp.c memcpy.c memdel.c memmove.c memset.c split.c strcat.c strchr.c strclr.c strcmp.c strcpy.c strdel.c strdup.c strequ.c striter.c striteri.c strjoin.c strlcat.c strlen.c strmap.c strmapi.c strncat.c strncmp.c strncpy.c strnequ.c strnew.c strnstr.c strrchr.c strstr.c strtrim.c substr.c tolower.c toupper.c
 OBJS = $(SRCS:.c=.o)
 HEADER = libft.h
 

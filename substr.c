@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strsub.c                                           :+:      :+:    :+:   */
+/*   substr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 07:34:55 by marvin            #+#    #+#             */
-/*   Updated: 2023/10/16 07:34:55 by marvin           ###   ########.fr       */
+/*   Created: 2023/10/17 09:30:13 by marvin            #+#    #+#             */
+/*   Updated: 2023/10/17 09:30:13 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stdlib.h"
+#include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*r;
-	int		i;
+	size_t	i;
 
-	i = start;
-	r = (char *)malloc(len);
+	if (start > ft_strlen(s))
+		return (NULL);
+	i = 0;
+	r = malloc((len * sizeof(char)) + 1);
 	if (!r)
 		return (NULL);
-	while (s[start + i] && i < len)
+	while (s[i + start] && i < len)
 	{
-		r[i] = s[start + i];
+		r[i] = s[i + start];
 		i++;
 	}
+	r[i] = '\0';
 	return (r);
 }

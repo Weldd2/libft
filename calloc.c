@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strnew.c                                           :+:      :+:    :+:   */
+/*   calloc.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 07:04:48 by marvin            #+#    #+#             */
-/*   Updated: 2023/10/16 07:04:48 by marvin           ###   ########.fr       */
+/*   Created: 2023/10/17 09:21:11 by marvin            #+#    #+#             */
+/*   Updated: 2023/10/17 09:21:11 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	char	*r;
-	size_t	c;
+	void	*ptr;
 
-	c = 0;
-	r = (char *)malloc(size);
-	if (!r)
+	if (nmemb == 0 || size == 0)
 		return (NULL);
-	while (c < size)
-	{
-		r[c] = '\0';
-		c++;
-	}
-	return (r);
+	ptr = malloc(nmemb * size);
+	if (!ptr)
+		return (NULL);
+	ft_memset(ptr, 0, nmemb * size);
+	return (ptr);
 }
