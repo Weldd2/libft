@@ -1,7 +1,7 @@
 NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-SRCS = atoi.c bzero.c calloc.c isalnum.c isalpha.c isascii.c isdigit.c isprint.c main.c memalloc.c memccpy.c memchr.c memcmp.c memcpy.c memdel.c memmove.c memset.c split.c strcat.c strchr.c strclr.c strcmp.c strcpy.c strdel.c strdup.c strequ.c striter.c striteri.c strjoin.c strlcat.c strlen.c strmap.c strmapi.c strncat.c strncmp.c strncpy.c strnequ.c strnew.c strnstr.c strrchr.c strstr.c strtrim.c substr.c tolower.c toupper.c
+SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_main.c ft_memalloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memdel.c ft_memmove.c ft_memset.c ft_split.c ft_strcat.c ft_strchr.c ft_strclr.c ft_strcmp.c ft_strcpy.c ft_strdel.c ft_strdup.c ft_strequ.c ft_striter.c ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlen.c ft_strmap.c ft_strmapi.c ft_strncat.c ft_strncmp.c ft_strncpy.c ft_strnequ.c ft_strnew.c ft_strnstr.c ft_strrchr.c ft_strstr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
 OBJS = $(SRCS:.c=.o)
 HEADER = libft.h
 
