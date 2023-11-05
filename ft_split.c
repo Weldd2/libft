@@ -6,13 +6,13 @@
 /*   By: amura <amura@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 14:47:46 by marvin            #+#    #+#             */
-/*   Updated: 2023/11/04 19:21:33 by amura            ###   ########.fr       */
+/*   Updated: 2023/11/05 15:30:19 by amura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_count_words(char const *s, char c)
+static int	ft_count_words(char const *s, char c)
 {
 	int	i;
 	int	is_word;
@@ -37,12 +37,26 @@ int		ft_count_words(char const *s, char c)
 	return (r);
 }
 
-char	**ft_split(char const *s, char c)
+static int	ft_getword_l(char *s, char c)
+{
+	int	word_l;
+
+	word_l = 0;
+	while (*s && *s == c)
+		s++;
+	while (*s && *s != c)
+	{
+		word_l++;
+		s++;
+	}
+	return (word_l);
+}
+
+char	**ft_split(char *s, char c)
 {
 	char	**r;
 	int		word_l;
 	int		i;
-	int		j;
 
 	i = 0;
 	r = malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
@@ -50,23 +64,14 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	while (*s)
 	{
-		while (*s == c)
+		word_l = ft_getword_l(s, c);
+		r[i] = (char *)malloc(sizeof(char) * (word_l + 1));
+		if (!r[i])
+			return (NULL);
+		while (*s && *s == c)
 			s++;
-		word_l = 0;
-		while (*s && *s != c)
-		{
-			s++;
-			word_l++;
-		}
-		r[i] = malloc((sizeof(char) * word_l) + 1);
-		j = 0;
-		while (word_l > 0)
-		{
-			r[i][j] = *(s - word_l);
-			word_l--;
-			j++;
-		}
-		r[i][j] = '\0';
+		ft_strlcpy(r[i], s, word_l + 1);
+		s += word_l;
 		i++;
 	}
 	r[i] = '\0';

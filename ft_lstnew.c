@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strnequ.c                                          :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amura <amura@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 07:26:24 by marvin            #+#    #+#             */
-/*   Updated: 2023/10/16 07:26:24 by marvin           ###   ########.fr       */
+/*   Created: 2023/11/05 15:35:09 by amura             #+#    #+#             */
+/*   Updated: 2023/11/05 15:37:35 by amura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strnequ(char const *s1, char const *s2, size_t n)
+t_list	*ft_lstnew(void *content)
 {
-	return (!ft_strncmp(s1, s2, n));
+	t_list	*r;
+
+	r = malloc(sizeof(t_list));
+	if (!r)
+		return (NULL);
+	r->content = content;
+	r->next = NULL;
+	return (r);
 }

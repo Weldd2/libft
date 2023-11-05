@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strncat.c                                          :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amura <amura@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/13 17:27:19 by marvin            #+#    #+#             */
-/*   Updated: 2023/10/13 17:27:19 by marvin           ###   ########.fr       */
+/*   Created: 2023/11/05 15:52:23 by amura             #+#    #+#             */
+/*   Updated: 2023/11/05 15:55:58 by amura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *dest, const char *src, size_t n)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	size_t	dest_len;
-	size_t	i;
+	t_list	*last;
 
-	dest_len = ft_strlen(dest);
-	i = 0;
-	while (i < n && src[i] != '\0')
+	if (!lst || !new)
+		return ;
+	if (*lst == NULL)
+		*lst = new;
+	else
 	{
-		dest[dest_len + i] = src[i];
-		i++;
+		last = ft_lstlast(*lst);
+		last->next = new;
 	}
-	dest[dest_len + i] = '\0';
-	return (dest);
 }

@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strmap.c                                           :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amura <amura@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 07:14:19 by marvin            #+#    #+#             */
-/*   Updated: 2023/10/16 07:14:19 by marvin           ###   ########.fr       */
+/*   Created: 2023/11/05 11:50:03 by amura             #+#    #+#             */
+/*   Updated: 2023/11/05 11:51:44 by amura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(char const *s, char (*f)(char))
+void	ft_putstr_fd(char *s, int fd)
 {
-	char	*r;
-	char	*r_cpy;
-
-	r = (char *)malloc(ft_strlen(s));
-	if (!r)
-		return (NULL);
-	r_cpy = r;
-	while (*s)
-	{
-		*r = f(*s);
-		r++;
-		s++;
-	}
-	return (r_cpy);
+	write(fd, s, ft_strlen(s));
 }

@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strclr.c                                           :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amura <amura@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 07:09:22 by marvin            #+#    #+#             */
-/*   Updated: 2023/10/16 07:09:22 by marvin           ###   ########.fr       */
+/*   Created: 2023/11/05 16:12:30 by amura             #+#    #+#             */
+/*   Updated: 2023/11/05 16:29:11 by amura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *s)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	while (*s)
+	t_list	*current;
+	t_list	*next;
+
+	if (lst == NULL || *lst == NULL)
+		return ;
+	current = *lst;
+	while (current != NULL)
 	{
-		*s = '\0';
-		s++;
+		next = current->next;
+		ft_lstdelone(current, del);
+		current = next;
 	}
+	*lst = NULL;
 }
+

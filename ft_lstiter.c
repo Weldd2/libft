@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strcat.c                                           :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amura <amura@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/13 17:05:07 by marvin            #+#    #+#             */
-/*   Updated: 2023/10/13 17:05:07 by marvin           ###   ########.fr       */
+/*   Created: 2023/11/05 16:31:31 by amura             #+#    #+#             */
+/*   Updated: 2023/11/05 16:47:24 by amura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *dest, const char *src)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	size_t	dest_len;
-	size_t	src_len;
+	t_list	*current;
 
-	dest_len = ft_strlen(dest);
-	src_len = 0;
-	while (src[src_len])
+	current = lst;
+	while (current)
 	{
-		dest[dest_len + src_len] = src[src_len];
-		src_len++;
+		f(current->content);
+		current = current->next;
 	}
-	dest[dest_len + src_len] = '\0';
-	return (dest);
 }

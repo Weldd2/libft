@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strcpy.c                                           :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amura <amura@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/13 16:50:23 by marvin            #+#    #+#             */
-/*   Updated: 2023/10/13 16:50:23 by marvin           ###   ########.fr       */
+/*   Created: 2023/11/05 15:37:55 by amura             #+#    #+#             */
+/*   Updated: 2023/11/05 15:40:20 by amura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, const char *src)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	char		*dest_cpy;
-	const char	*src_cpy;
-
-	dest_cpy = dest;
-	src_cpy = src;
-	while (*src)
+	if (lst && new)
 	{
-		*dest_cpy = *src_cpy;
-		dest_cpy++;
-		src_cpy++;
+		new->next = *lst;
+		*lst = new;
 	}
-	*dest_cpy = '\0';
-	return (dest);
 }
