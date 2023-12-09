@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memchr.c                                           :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: antoinemura <antoinemura@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 14:42:42 by marvin            #+#    #+#             */
-/*   Updated: 2023/10/12 14:42:42 by marvin           ###   ########.fr       */
+/*   Updated: 2023/12/09 23:26:51 by antoinemura      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char	*s_cpy;
+	const unsigned char *p = s;
 
-	s_cpy = (unsigned char *)s;
-	while (n > 0)
-	{
-		if (*s_cpy == (unsigned char)c)
-			return (s_cpy);
-		s_cpy++;
+	while (n-- != 0) {
+		if (*p == (unsigned char)c) {
+			return (void *)p;
+		}
+		p++;
 	}
 	return (NULL);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amura <amura@student.42.fr>                +#+  +:+       +#+        */
+/*   By: antoinemura <antoinemura@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 14:47:46 by marvin            #+#    #+#             */
-/*   Updated: 2023/11/05 15:30:19 by amura            ###   ########.fr       */
+/*   Updated: 2023/12/09 21:57:33 by antoinemura      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,6 @@ char	**ft_split(char *s, char c)
 		s += word_l;
 		i++;
 	}
-	r[i] = '\0';
+	r[i] = NULL;
 	return (r);
 }
