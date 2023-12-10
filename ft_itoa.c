@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoinemura <antoinemura@student.42.fr>    +#+  +:+       +#+        */
+/*   By: amura <amura@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 15:46:38 by amura             #+#    #+#             */
-/*   Updated: 2023/12/10 18:51:27 by antoinemura      ###   ########.fr       */
+/*   Updated: 2023/12/10 19:03:34 by amura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 int	count_digit(long n)
 {
@@ -40,12 +38,11 @@ char	*ft_itoa(int n)
 	n_cpy = (long)n;
 	size = count_digit(n) + (n < 0);
 	r = (char *)malloc(sizeof(char) * (size + 1));
-	printf("%d\n", size + 1);
 	if (!r)
 		return (NULL);
-	if (n == 0)
-		return ("0");
 	r[0] = '-';
+	if (n == 0)
+		r[0] = '0';
 	n_cpy = (long)n;
 	if (n_cpy < 0)
 		n_cpy = -n_cpy;
@@ -57,10 +54,4 @@ char	*ft_itoa(int n)
 	}
 	r[count_digit(n) + (n < 0)] = '\0';
 	return (r);
-}
-
-
-int	main(void)
-{
-	printf("%s", ft_itoa(3));
 }

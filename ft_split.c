@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoinemura <antoinemura@student.42.fr>    +#+  +:+       +#+        */
+/*   By: amura <amura@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 14:47:46 by marvin            #+#    #+#             */
-/*   Updated: 2023/12/10 02:40:44 by antoinemura      ###   ########.fr       */
+/*   Updated: 2023/12/10 20:07:07 by amura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,18 @@ static int	ft_getword_l(char *s, char c)
 	return (word_l);
 }
 
+static char	*a(char *s, char c)
+{
+	int	i;
+
+	i = ft_strlen(s) - 1;
+	while (*(s + i) && *(s + i) == c)
+		i--;
+	while (*s && *s == c)
+		s++;
+	return (s);
+}
+
 char	**ft_split(char *s, char c)
 {
 	char	**r;
@@ -62,19 +74,20 @@ char	**ft_split(char *s, char c)
 	r = malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
 	if (!r)
 		return (NULL);
+	s = a(s, c);
 	while (*s)
 	{
 		word_l = ft_getword_l(s, c);
-		r[i] = (char *)malloc(sizeof(char) * (word_l + 1));
+		r[i] = (char *)malloc(sizeof(char) * (word_l + (word_l != 0)));
 		if (!r[i])
 			return (NULL);
-		while (*s && *s == c)
-			s++;
+		s = a(s, c);
 		if (!*s)
 			break;
 		ft_strlcpy(r[i], s, word_l + 1);
 		s += word_l;
 		i++;
+		s = a(s, c);
 	}
 	r[i] = NULL;
 	return (r);

@@ -6,7 +6,7 @@
 /*   By: amura <amura@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 15:41:22 by amura             #+#    #+#             */
-/*   Updated: 2023/11/05 15:47:07 by amura            ###   ########.fr       */
+/*   Updated: 2023/12/10 20:16:30 by amura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_lstsize(t_list *lst)
 	count = 0;
 	if (!lst)
 		return (0);
-	current = lst->next;
+	current = lst;
 	while (current != NULL)
 	{
 		current = current->next;
