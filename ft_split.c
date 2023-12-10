@@ -6,7 +6,7 @@
 /*   By: antoinemura <antoinemura@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 14:47:46 by marvin            #+#    #+#             */
-/*   Updated: 2023/12/09 21:57:33 by antoinemura      ###   ########.fr       */
+/*   Updated: 2023/12/10 02:40:44 by antoinemura      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ char	**ft_split(char *s, char c)
 			return (NULL);
 		while (*s && *s == c)
 			s++;
+		if (!*s)
+			break;
 		ft_strlcpy(r[i], s, word_l + 1);
 		s += word_l;
 		i++;
