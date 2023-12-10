@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amura <amura@student.42.fr>                +#+  +:+       +#+        */
+/*   By: antoinemura <antoinemura@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 15:46:38 by amura             #+#    #+#             */
-/*   Updated: 2023/11/05 15:30:59 by amura            ###   ########.fr       */
+/*   Updated: 2023/12/10 02:07:00 by antoinemura      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	count_digit(long n)
 
 	i = 0;
 	if (n == 0)
-		return (0);
+		return (1);
 	if (n < 0)
 		n = -n;
 	while (n >= 10)
