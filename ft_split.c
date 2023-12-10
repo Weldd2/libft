@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amura <amura@student.42.fr>                +#+  +:+       +#+        */
+/*   By: antoinemura <antoinemura@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 14:47:46 by marvin            #+#    #+#             */
-/*   Updated: 2023/12/10 20:07:07 by amura            ###   ########.fr       */
+/*   Updated: 2023/12/10 21:55:29 by antoinemura      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ char	**ft_split(char *s, char c)
 			return (NULL);
 		s = a(s, c);
 		if (!*s)
-			break;
+			break ;
 		ft_strlcpy(r[i], s, word_l + 1);
 		s += word_l;
 		i++;

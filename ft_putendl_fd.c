@@ -6,7 +6,7 @@
 /*   By: antoinemura <antoinemura@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 11:47:31 by amura             #+#    #+#             */
-/*   Updated: 2023/12/09 23:10:56 by antoinemura      ###   ########.fr       */
+/*   Updated: 2023/12/10 21:55:03 by antoinemura      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_putendl_fd(char *s, int fd)
 {
 	write(fd, s, ft_strlen(s));
-    write(fd, "\n", 1);
+	write(fd, "\n", 1);
 }

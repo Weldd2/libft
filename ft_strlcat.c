@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amura <amura@student.42.fr>                +#+  +:+       +#+        */
+/*   By: antoinemura <antoinemura@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 19:00:46 by marvin            #+#    #+#             */
-/*   Updated: 2023/12/10 19:23:05 by amura            ###   ########.fr       */
+/*   Updated: 2023/12/10 21:57:16 by antoinemura      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
@@ -33,4 +32,3 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 		dest[dest_len + i] = '\0';
 	return (dest_len + src_len);
 }
-
