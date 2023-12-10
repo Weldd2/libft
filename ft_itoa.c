@@ -6,7 +6,7 @@
 /*   By: antoinemura <antoinemura@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 15:46:38 by amura             #+#    #+#             */
-/*   Updated: 2023/12/10 02:07:00 by antoinemura      ###   ########.fr       */
+/*   Updated: 2023/12/10 18:47:15 by antoinemura      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	count_digit(long n)
 		n /= 10;
 		i++;
 	}
-	return (i + 1);
+	return (i);
 }
 
 char	*ft_itoa(int n)
