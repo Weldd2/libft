@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpnum.c                                      :+:      :+:    :+:   */
+/*   ft_pow.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antoinemura <antoinemura@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/14 15:18:04 by marvin            #+#    #+#             */
-/*   Updated: 2023/12/09 22:38:30 by antoinemura      ###   ########.fr       */
+/*   Created: 2024/01/18 14:22:14 by antoinemura       #+#    #+#             */
+/*   Updated: 2024/01/18 14:23:46 by antoinemura      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+int	ft_pow(int nb, int exposant)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+	int	res;
+
+	res = 1;
+	while (exposant > 0)
+	{
+		res = res * nb;
+		exposant--;
+	}
+	return (res);
 }

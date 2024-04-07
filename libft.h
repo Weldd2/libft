@@ -6,7 +6,7 @@
 /*   By: antoinemura <antoinemura@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 11:37:48 by marvin            #+#    #+#             */
-/*   Updated: 2023/12/10 00:01:30 by antoinemura      ###   ########.fr       */
+/*   Updated: 2024/04/06 15:22:46 by antoinemura      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
+# include "ft_get_next_line.h"
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
 
 typedef struct s_list
 {
@@ -67,5 +72,14 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+int		ft_pow(int nb, int exposant);
+int		ft_bin_to_int(char *s);
+int		ft_atoi_base(char *nbr, char *base);
+int		ft_start_with(char *string, char *test);
+int		ft_end_with(char *string, char *test);
+
+void	*ft_realloc(void *ptr, size_t old_size, size_t new_size);
+char	*ft_get_next_line(int fd);
 
 #endif

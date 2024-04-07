@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpnum.c                                      :+:      :+:    :+:   */
+/*   ft_bin_to_int.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antoinemura <antoinemura@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/14 15:18:04 by marvin            #+#    #+#             */
-/*   Updated: 2023/12/09 22:38:30 by antoinemura      ###   ########.fr       */
+/*   Created: 2024/01/18 14:22:37 by antoinemura       #+#    #+#             */
+/*   Updated: 2024/04/06 15:18:00 by antoinemura      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+int	ft_bin_to_int(char *s)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+	int	ite;
+	int	res;
+	int	temp;
+
+	res = 0;
+	ite = 7;
+	while (ite >= 0)
+	{
+		temp = *(s + 7 - ite) - '0';
+		res += temp * ft_pow(2, ite);
+		ite--;
+	}
+	return (res);
 }
