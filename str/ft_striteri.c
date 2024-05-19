@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antoinemura <antoinemura@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/12 11:37:48 by marvin            #+#    #+#             */
-/*   Updated: 2024/05/18 14:53:22 by antoinemura      ###   ########.fr       */
+/*   Created: 2023/10/16 07:12:17 by marvin            #+#    #+#             */
+/*   Updated: 2024/05/18 14:50:56 by antoinemura      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "../libft.h"
 
-# include <stdlib.h>
-# include <stdio.h>
-# include <unistd.h>
-# include "char/char.h"
-# include "convert/convert.h"
-# include "get_next_line/ft_get_next_line.h"
-# include "io/io.h"
-# include "list/list.h"
-# include "math/math.h"
-# include "mem/mem.h"
-# include "printf/ft_printf.h"
-# include "str/str.h"
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+{
+	int	c;
 
-#endif
+	c = 0;
+	while (*s)
+	{
+		f(c, s);
+		c++;
+		s++;
+	}
+}

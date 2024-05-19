@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antoinemura <antoinemura@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/12 11:37:48 by marvin            #+#    #+#             */
-/*   Updated: 2024/05/18 14:53:22 by antoinemura      ###   ########.fr       */
+/*   Created: 2023/10/14 12:27:05 by marvin            #+#    #+#             */
+/*   Updated: 2024/05/18 14:50:56 by antoinemura      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "../libft.h"
 
-# include <stdlib.h>
-# include <stdio.h>
-# include <unistd.h>
-# include "char/char.h"
-# include "convert/convert.h"
-# include "get_next_line/ft_get_next_line.h"
-# include "io/io.h"
-# include "list/list.h"
-# include "math/math.h"
-# include "mem/mem.h"
-# include "printf/ft_printf.h"
-# include "str/str.h"
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+{
+	size_t	i;
+	size_t	j;
 
-#endif
+	i = 0;
+	if (*needle == '\0')
+		return ((char *)(haystack));
+	while (haystack[i] && len > i)
+	{
+		j = 0;
+		while ((haystack[i + j] == needle[j]) && len > i + j)
+		{
+			if (needle[j + 1] == '\0')
+				return ((char *)(haystack + i));
+			j++;
+		}
+		i++;
+	}
+	return (NULL);
+}

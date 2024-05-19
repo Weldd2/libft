@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antoinemura <antoinemura@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/12 11:37:48 by marvin            #+#    #+#             */
-/*   Updated: 2024/05/18 14:53:22 by antoinemura      ###   ########.fr       */
+/*   Created: 2023/11/05 15:35:09 by amura             #+#    #+#             */
+/*   Updated: 2024/05/18 14:50:56 by antoinemura      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "../libft.h"
 
-# include <stdlib.h>
-# include <stdio.h>
-# include <unistd.h>
-# include "char/char.h"
-# include "convert/convert.h"
-# include "get_next_line/ft_get_next_line.h"
-# include "io/io.h"
-# include "list/list.h"
-# include "math/math.h"
-# include "mem/mem.h"
-# include "printf/ft_printf.h"
-# include "str/str.h"
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*r;
 
-#endif
+	r = malloc(sizeof(t_list));
+	if (!r)
+		return (NULL);
+	r->content = content;
+	r->next = NULL;
+	return (r);
+}

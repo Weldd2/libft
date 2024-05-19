@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antoinemura <antoinemura@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/12 11:37:48 by marvin            #+#    #+#             */
-/*   Updated: 2024/05/18 14:53:22 by antoinemura      ###   ########.fr       */
+/*   Created: 2023/11/05 16:49:09 by amura             #+#    #+#             */
+/*   Updated: 2024/05/18 14:50:56 by antoinemura      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "../libft.h"
 
-# include <stdlib.h>
-# include <stdio.h>
-# include <unistd.h>
-# include "char/char.h"
-# include "convert/convert.h"
-# include "get_next_line/ft_get_next_line.h"
-# include "io/io.h"
-# include "list/list.h"
-# include "math/math.h"
-# include "mem/mem.h"
-# include "printf/ft_printf.h"
-# include "str/str.h"
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+{
+	t_list	*new_elem;
+	t_list	*new_list;
 
-#endif
+	new_list = NULL;
+	while (lst)
+	{
+		new_elem = ft_lstnew(NULL);
+		if (!new_elem)
+		{
+			ft_lstclear(&new_list, del);
+			return (NULL);
+		}
+		new_elem->content = f(lst->content);
+		ft_lstadd_back(&new_list, new_elem);
+		lst = lst->next;
+	}
+	return (new_list);
+}
