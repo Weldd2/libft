@@ -1,8 +1,6 @@
-*.exe
 *.a
-a.out
 *.o
-.DS_Store
 a.out
 *.json
+.DS_Store
 .vscode/
