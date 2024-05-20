@@ -6,7 +6,7 @@
 /*   By: antoinemura <antoinemura@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 20:14:22 by antoinemura       #+#    #+#             */
-/*   Updated: 2024/05/18 15:52:06 by antoinemura      ###   ########.fr       */
+/*   Updated: 2024/05/20 02:54:07 by antoinemura      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char *s, char c);
 int		ft_strequals(char *s1, char *s2);
+char	*ft_strvjoin(const char *str, ...);
 
 #endif
