@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoinemura <antoinemura@student.42.fr>    +#+  +:+       +#+        */
+/*   By: amura <amura@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 07:46:02 by marvin            #+#    #+#             */
-/*   Updated: 2024/05/20 03:16:11 by antoinemura      ###   ########.fr       */
+/*   Updated: 2024/05/25 22:36:45 by amura            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (s);
 }
 
-char *ft_strvjoin(char *str, ...)
+char	*ft_strvjoin(char *str, ...)
 {
 	va_list	ap;
 	char	*r;
