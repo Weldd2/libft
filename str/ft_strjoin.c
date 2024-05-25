@@ -6,7 +6,7 @@
 /*   By: antoinemura <antoinemura@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 07:46:02 by marvin            #+#    #+#             */
-/*   Updated: 2024/05/20 03:03:15 by antoinemura      ###   ########.fr       */
+/*   Updated: 2024/05/20 03:16:11 by antoinemura      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,7 @@ char *ft_strvjoin(char *str, ...)
 		r = ft_strjoin(r, next_str);
 		free(temp);
 		if (!r)
-		{
-			va_end(ap);
-			return (NULL);
-		}
+			return (va_end(ap), NULL);
 		next_str = va_arg(ap, char *);
 	}
 	va_end(ap);
