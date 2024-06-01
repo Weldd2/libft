@@ -6,7 +6,7 @@
 /*   By: antoinemura <antoinemura@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 20:08:40 by antoinemura       #+#    #+#             */
-/*   Updated: 2024/05/26 20:20:31 by antoinemura      ###   ########.fr       */
+/*   Updated: 2024/06/01 13:11:25 by antoinemura      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ int	wc_l(char *filename)
 		bytes_read = read(fd, buffer, sizeof(buffer));
 	}
 	if (bytes_read < 0)
-		return (-1);
+		return (close(fd), -1);
 	return (close(fd), line_count);
 }
